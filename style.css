@@ -1,0 +1,245 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#mic-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-color: black;
+    margin-left: 4%;
+    background-image: url('img/mic-button.gif');
+    padding: 4%;
+}
+
+#chat-container {
+    width: 90%; /* Usando largura 100% para ocupar a largura total da tela */
+    max-width: 800px; /* Definindo uma largura máxima */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    left: 5px;
+}
+
+#chat-box {
+    height: 700px; /* Reduzi a altura para um tamanho mais adequado para dispositivos móveis */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+/* Estilo para o container do input e do botão */
+#user-input {
+    margin-top: 10px;
+    width: 50%;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 20px;
+}
+
+#send-button {
+    padding: 10px 20px;
+    background-color: #f5981e;
+    color: #fff;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 8px;
+}
+
+/* Estilo para o chat-box (contêiner das mensagens) */
+#chat-box {
+    max-width: 100%; /* Largura máxima do contêiner das mensagens */
+    margin: 0 auto; /* Centralizar o chat-box na tela */
+    overflow-y: auto; /* Adicionar uma barra de rolagem vertical quando necessário */
+    max-height: 600px; /* Altura máxima do contêiner das mensagens para dispositivos móveis */
+    background-color: #7e3be4; /* Cor de fundo do chat-box */
+    border-radius: 10px; /* Borda arredondada para o chat-box */
+    padding: 10px; /* Espaçamento interno do chat-box */
+    font-size: 27px; /* Reduzi o tamanho da fonte para dispositivos móveis */
+}
+
+/* Estilo para as mensagens do usuário */
+.user-message {
+    background-color: #bf34db; /* Cor de fundo das mensagens do usuário */
+    color: #fff; /* Cor do texto das mensagens do usuário */
+    border-radius: 10px; /* Borda arredondada para as mensagens do usuário */
+    padding: 10px 15px; /* Preenchimento interno para espaçamento dentro das mensagens */
+    margin-bottom: 10px; /* Espaçamento inferior entre as mensagens */
+    display: inline-block; /* Para que as mensagens fiquem em linha com o texto */
+    max-width: 70%; /* Largura máxima para mensagens do usuário */
+    clear: both; /* Limpar elementos flutuantes */
+    float: right; /* Alinhar mensagens do usuário à direita */
+}
+
+/* Estilo para as mensagens do bot */
+.bot-message {
+    background-color: #e0e0e0; /* Cor de fundo das mensagens do bot */
+    color: #333; /* Cor do texto das mensagens do bot */
+    border-radius: 10px; /* Borda arredondada para as mensagens do bot */
+    padding: 10px 15px; /* Preenchimento interno para espaçamento dentro das mensagens */
+    margin-bottom: 10px; /* Espaçamento inferior entre as mensagens */
+    display: inline-block; /* Para que as mensagens fiquem em linha com o texto */
+    max-width: 70%; /* Largura máxima para mensagens do bot */
+    clear: both; /* Limpar elementos flutuantes */
+    float: left; /* Alinhar mensagens do bot à esquerda */
+}
+
+.avatar {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.avatar-container {
+    float: left;
+    margin-right: 6px; /* Espaço entre o avatar e a caixa de texto */
+    margin-bottom: 6px; /* Espaço abaixo do avatar */
+}
+
+.chat-container {
+    display: flex;
+    align-items: flex-start;
+}
+
+.bot-avatar {
+    margin-top: 5px; /* Espaço acima do avatar do bot */
+    margin-right: 15px; /* Espaço à direita do avatar do bot */
+    border-radius: 50%;
+}
+
+.user-avatar {
+    width: 120px; /* Largura do avatar do usuário para PC */
+}
+
+.bot-avatar {
+    width: 120px; /* Largura do avatar do bot para PC */
+}
+
+/* Media query para dispositivos móveis */
+@media screen and (max-width: 768px) {
+    #chat-box {
+        background-color: #ffffff;
+        height: 600px; /* Ajuste a altura para dispositivos móveis menores, se necessário */
+        max-height: 550px; /* Ajuste a altura máxima, se necessário */
+    }
+    #send-button {
+        font-size: 24px; /* Reduza o tamanho da fonte do botão para economizar espaço */
+    }
+    .user-message,
+    .bot-message {
+        float: left;
+        font-size: 18px;
+        background-color: #96caef;
+        max-width: 74%; /* Reduza a largura máxima para acomodar telas menores */
+    }
+    
+    #user-input {
+    width: 60%;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 20px;
+    }
+    
+    #send-button {
+        height: 46px;
+        padding: 10px 20px;
+        color: #fff;
+        cursor: pointer;
+        border-radius: 8px;
+        background-color: #0c6307; /* Cor de fundo do botão de envio para dispositivos móveis */
+        font-size: 16px;
+        
+    }
+
+    .user-message {
+        max-width: 75%;
+        background-color: #285a25;
+        font-size: 18px;
+        float: right;
+    }
+    #chat-container{
+        max-height: 790px;
+        margin-left: -1px;
+        max-width: 500px;
+        background-image: radial-gradient(circle at 37.43% 64.97%, #ff6cff 0, #f85dff 16.67%, #d649fb 33.33%, #ad32f0 50%, #7f1de5 66.67%, #4713dd 83.33%, #0015d8 100%);
+    }
+    .titulo{
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 30px;
+    }
+    .avatar {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .avatar-container {
+        float: left;
+        margin-right: 6px; /* Espaço entre o avatar e a caixa de texto */
+        margin-bottom: 6px; /* Espaço abaixo do avatar */
+    }
+    
+    .chat-container {
+        display: flex;
+        align-items: flex-start;
+    }
+    
+    .bot-avatar {
+        margin-top: 5px; /* Espaço acima do avatar do bot */
+        margin-right: 15px; /* Espaço à direita do avatar do bot */
+        border-radius: 50%;
+    }
+}
+
+
+/* Estilo padrão para o título (para PC) */
+/* Estilo padrão para o título (para PC) */
+.titulo-pc {
+    display: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+.titulo-pc2{
+    display: block;
+    font-size: 3.5rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Estilo para o título em dispositivos móveis */
+@media screen and (max-width: 768px) {
+    .titulo-pc {
+        display: block; /* Exibe o título em dispositivos móveis */
+        font-size: 30px; /* Define o tamanho da fonte para dispositivos móveis */
+        text-align: center; /* Centraliza o título */
+    }
+    .titulo-pc2{
+        display: none;
+    }
+}
+
+
+
+
+/* Estilos para dispositivos móveis */
+@media (max-width: 767px) {
+    .user-avatar {
+        width: 45px !important; /* Largura do avatar do usuário para dispositivos móveis */
+    }
+
+    .bot-avatar {
+        width: 45px !important; /* Largura do avatar do bot para dispositivos móveis */
+    }
+}
